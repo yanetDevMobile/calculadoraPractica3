@@ -9,7 +9,9 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+ 
+    @IBOutlet weak var propina: UITextField!
+    @IBOutlet weak var montoTxt: UITextField!
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -17,4 +19,7 @@ class ViewController: UIViewController {
 
 
 }
+// MARK: - Extensiones para PickerView
+
+
 
