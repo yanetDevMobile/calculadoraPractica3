@@ -12,6 +12,8 @@ class ViewController: UIViewController {
  
     @IBOutlet weak var resultLbl: UILabel!
     
+    @IBOutlet weak var totalLbl: UILabel!
+    @IBOutlet weak var propinaLbl: UILabel!
     @IBOutlet weak var propinaTxt: UITextField!
     @IBOutlet weak var montoTxt: UITextField!
     
@@ -23,11 +25,18 @@ class ViewController: UIViewController {
 
 
     @IBAction func calcularBtn(_ sender: UIButton) {
-        var monto : Float? = Float(self.montoTxt.text!)
-        var propina : Float? = Float(self.propinaTxt.text!)
-        var result : Float?
+        let monto : Float? = Float(self.montoTxt.text!)
+        let propina : Float? = Float(self.propinaTxt.text!)
+        let result : Float?
+        let propinaResult : Float?
+        propinaResult = monto! * (propina!/100)
+        result = monto! + propinaResult!
+        propinaLbl.text = (String(format: "%.2f", propinaResult!))
+        totalLbl.text = (String(format: "%.2f", result!))
+        
         
     }
+  
 }
 // MARK: - Extensiones para PickerView
 
